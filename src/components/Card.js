@@ -10,7 +10,7 @@ export default function Card(props) {
       <footer className="card-footer">
         {/* eslint-disable */}
         <span href="#" className="card-footer-item">
-          type: {props.type}
+          year: {props.year}
         </span>
         <span
           href="#"
