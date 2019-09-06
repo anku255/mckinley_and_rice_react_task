@@ -5,7 +5,7 @@ export default function Header() {
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="/home">
-          Seers
+          Mckinley & Rice
         </a>
 
         {/* eslint-disable */}
@@ -26,9 +26,9 @@ export default function Header() {
         <div className="navbar-start">
           <a className="navbar-item">Home</a>
 
-          <a className="navbar-item">Patients</a>
-          <a className="navbar-item">Appointments</a>
-          <a className="navbar-item">Messages</a>
+          <a className="navbar-item">Navbar Item 1</a>
+          <a className="navbar-item">Navbar Item 2</a>
+          <a className="navbar-item">Navbar Item 3</a>
         </div>
 
         <div className="navbar-end">
