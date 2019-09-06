@@ -3,6 +3,11 @@ import axios from "axios";
 
 const SERVER_URL = "https://reqres.in/api/login";
 
+const DUMMY_DATA = {
+  email: "example@email.com",
+  password: "password"
+};
+
 class Login extends Component {
   state = { email: "", password: "" };
 
@@ -13,15 +18,27 @@ class Login extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const data = { ...this.state };
+    // If user data matches dummy data then
+    // redirect to the home page
+    if (
+      data.email === DUMMY_DATA.email &&
+      data.password === DUMMY_DATA.password
+    ) {
+      alert("Login Successful!");
+      return this.props.history.push("/home");
+    }
+
     axios
       .post(SERVER_URL, data)
       .then(res => {
         alert("Login Successful!");
-        this.props.history("/home");
+        this.props.history.push("/home");
       })
       .catch(err => {
         if (err.response && err.response.data) {
-          alert(err.response.data.error);
+          alert(
+            `${err.response.data.error}\n Use email: example@email.com and password: password to login`
+          );
         } else {
           console.error(err);
         }
